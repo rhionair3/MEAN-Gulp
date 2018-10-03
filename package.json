@@ -1,0 +1,11 @@
+{
+  "name": "firstgulpsass",
+  "version": "1.0.0",
+  "description": "First Gulp Sass",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "Test"
+  },
+  "author": "",
+  "license": "ISC"
+}

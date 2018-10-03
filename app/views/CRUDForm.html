@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container mt-3">
+            <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#formPegawai">Tambah Data Baru</button>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="container mt-3" ng-controller="FormController">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nama Lengkap</th>
+                        <th>Status Kepegawaian</th>
+                        <th>Lama Bekerja</th>
+                        <th>Ubah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat-start="form in forms">
+                        <td>{{form.nama_lengkap}}</td>
+                        <td>{{form.status_pegawai }}</td>
+                        <td>{{form.lama_bekerja }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <button ng-click='updateMessageFormToggle(form._id);' class='btn pull-right'>
+                                    Edit
+                                </button>
+                                <button ng-click='deleteMessage(form._id);' class='btn btn-danger pull-right'>
+                                    &times;
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr ng-repeat-end="ng-repeat-end">
+                        <td colspan="4" class="updateMessageTD" style="display:none;" id="updateMessage{{form._id}}">
+                            <form>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Nama Lengkap</td>
+                                            <td><input type="text" ng-model="o.nama_lengkap" ng-init="o.nama_lengkap=form.nama_lengkap" class="form-control"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status Pegawai</td>
+                                            <td><input type="text" ng-model="o.status_pegawai" ng-init="o.status_pegawai=form.status_pegawai;" class="form-control"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lama Bekerja</td>
+                                            <td><input type="text" ng-model="o.lama_bekerja" ng-init="o.lama_bekerja=form.lama_bekerja;" class="form-control"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan='2'>
+                                                <button ng-click='updateMessage(form._id,o)' type='submit' class="btn btn-block">Update</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="formPegawai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">FORM PEGAWAI</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" ng-model="form.nama_lengkap" class="form-control" placeholder="Masukan Nama Lengkap">
+                    <small id="emailHelp" class="form-text text-muted">Silahkan Isi Nama Lengkap Sesuai KTP</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Status Kepegawaian</label>
+                    <input type="text" ng-model="form.status_pegawai" class="form-control" placeholder="Masukan Status Karyawan">
+                </div>
+                <div class="form-group">
+                    <label>Lama Bekerja</label>
+                    <input type="text" ng-model="form.lama_bekerja" class="form-control" placeholder="Masukan Lama Bekerja">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button ng-click='createMessage()' type="submit" class="btn btn-primary">Simpan Data</button>
+            </div>
+        </div>
+    </form>
+</div>
