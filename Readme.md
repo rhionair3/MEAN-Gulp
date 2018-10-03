@@ -1,8 +1,5 @@
 # MEAN - GULP
-# =====================================
-
-# Create Database Collection MongoDB
-=======================================
+# ===============================================================
 1. Use Mongodb Compass GUI or use CMD mongo
 2. write command in cmd : use "database_name"
 3. add collection :
