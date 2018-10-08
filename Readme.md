@@ -31,8 +31,10 @@
    - moment/
    - mongoose/
    - run-sequence/
-   Dependencies and DevDep above were not listed in my package.json and not install locally project, coz i won't to consume too much drive space and my inet quota.
-   So I just install all once to my global dependencies an link all dependencies i need to my project using command :
+   
+Dependencies and DevDep above were not listed in my package.json and not install locally project, coz i won't to consume too much drive space and my inet quota.
+So I just install all once to my global dependencies an link all dependencies i need to my project using command :
+
    "npm link [name of installed global dependencies]" in project root
  6. Run Project using command line "gulp" in project root.
  7. Base Interface web using port :3000 and api form using port :3591. 
